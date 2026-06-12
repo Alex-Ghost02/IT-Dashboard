@@ -25,7 +25,7 @@ body{
     overflow:hidden;
 }
 
-/* BACKGROUND GRID */
+/* BACKGROUND */
 
 body::before{
     content:'';
@@ -54,10 +54,10 @@ body::before{
 .it-bay-header{
     width:100%;
     text-align:center;
-    font-size:110px;
+    font-size:115px;
     font-weight:800;
     color:#fff;
-    letter-spacing:10px;
+    letter-spacing:12px;
     padding-top:18px;
     line-height:1;
     text-shadow:0 0 25px rgba(255,255,255,0.15);
@@ -127,14 +127,14 @@ body::before{
     letter-spacing:1px;
 }
 
-/* RATING */
+/* SCORE */
 
 .rating{
     text-align:right;
 }
 
 .score{
-    font-size:72px;
+    font-size:78px;
     font-weight:800;
     color:#ffffff;
     line-height:1;
@@ -151,47 +151,63 @@ body::before{
 .stars{
     margin-top:12px;
     display:flex;
-    gap:8px;
+    gap:10px;
     justify-content:flex-end;
 }
 
 .star{
-    font-size:38px;
-    color:#00f5d4;
-    animation:wave 1.5s infinite ease-in-out;
+    font-size:44px;
+    color:#00fff2;
+    animation:waveRoll 1.4s infinite ease-in-out;
+    filter:drop-shadow(0 0 14px rgba(0,255,242,0.9));
 }
+
+/* STAR DELAYS */
 
 .star:nth-child(1){
     animation-delay:0s;
 }
 
 .star:nth-child(2){
-    animation-delay:0.15s;
+    animation-delay:0.12s;
 }
 
 .star:nth-child(3){
-    animation-delay:0.3s;
+    animation-delay:0.24s;
 }
 
 .star:nth-child(4){
-    animation-delay:0.45s;
+    animation-delay:0.36s;
 }
 
 .star:nth-child(5){
-    animation-delay:0.6s;
+    animation-delay:0.48s;
 }
 
-@keyframes wave{
+/* ROLLING WAVE */
+
+@keyframes waveRoll{
 
     0%,100%{
-        transform:translateY(0px);
-        opacity:0.7;
+        transform:
+        translateY(0px)
+        rotate(0deg)
+        scale(1);
+
+        opacity:0.8;
     }
 
     50%{
-        transform:translateY(-12px);
+        transform:
+        translateY(-16px)
+        rotate(18deg)
+        scale(1.25);
+
         opacity:1;
-        text-shadow:0 0 18px rgba(0,245,212,0.7);
+
+        filter:
+        drop-shadow(0 0 22px rgba(0,255,242,1))
+        drop-shadow(0 0 40px rgba(0,255,242,0.8));
     }
 }
 
@@ -199,7 +215,7 @@ body::before{
 
 .animation-section{
     margin-top:28px;
-    height:48vh;
+    height:50vh;
     border-radius:30px;
     background:#101010;
     position:relative;
@@ -216,10 +232,10 @@ body::before{
 
 .glow{
     position:absolute;
-    width:420px;
-    height:420px;
+    width:520px;
+    height:520px;
     background:#00f5d4;
-    filter:blur(160px);
+    filter:blur(180px);
     opacity:0.08;
     animation:pulseGlow 5s infinite;
 }
@@ -230,7 +246,7 @@ body::before{
     position:relative;
     animation:float 4s ease-in-out infinite;
     z-index:2;
-    transform:scale(1.15);
+    transform:scale(1.45);
 }
 
 /* MONITOR */
@@ -241,7 +257,9 @@ body::before{
     background:#00f5d4;
     border-radius:18px;
     position:relative;
-    box-shadow:0 0 35px rgba(0,245,212,0.35);
+    box-shadow:
+    0 0 35px rgba(0,245,212,0.35),
+    0 0 80px rgba(0,245,212,0.25);
 }
 
 /* FACE */
@@ -277,7 +295,7 @@ body::before{
 .monitor-smile{
     width:75px;
     height:38px;
-    border-bottom:7px solid #000;
+    border-bottom:8px solid #000;
     border-radius:0 0 90px 90px;
     position:absolute;
     left:82px;
@@ -307,29 +325,34 @@ body::before{
     position:absolute;
     top:-18px;
     right:-15px;
-    color:#00f5d4;
-    font-size:42px;
+    color:#00fff2;
+    font-size:46px;
     font-weight:800;
     animation:pulse 2s infinite;
+    text-shadow:
+    0 0 12px rgba(0,255,242,0.9),
+    0 0 30px rgba(0,255,242,0.8);
 }
 
 /* TEXT */
 
 .tech-text{
-    margin-top:18px;
-    font-size:42px;
+    margin-top:40px;
+    font-size:54px;
     font-weight:800;
-    letter-spacing:4px;
+    letter-spacing:8px;
     text-align:center;
     color:white;
-    text-shadow:0 0 20px rgba(255,255,255,0.1);
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.12),
+    0 0 35px rgba(0,245,212,0.15);
 }
 
 .sub-text{
-    margin-top:10px;
-    font-size:22px;
+    margin-top:14px;
+    font-size:24px;
     color:#00f5d4;
-    letter-spacing:2px;
+    letter-spacing:3px;
     font-weight:700;
     animation:flicker 3s infinite;
     text-align:center;
@@ -340,15 +363,15 @@ body::before{
 @keyframes float{
 
     0%{
-        transform:translateY(0px) scale(1.15);
+        transform:translateY(0px) scale(1.45);
     }
 
     50%{
-        transform:translateY(-10px) scale(1.15);
+        transform:translateY(-14px) scale(1.45);
     }
 
     100%{
-        transform:translateY(0px) scale(1.15);
+        transform:translateY(0px) scale(1.45);
     }
 }
 
@@ -361,7 +384,7 @@ body::before{
     }
 
     50%{
-        transform:scale(1.15);
+        transform:scale(1.2);
     }
 
     100%{
@@ -392,7 +415,7 @@ body::before{
     }
 
     50%{
-        transform:scale(1.08);
+        transform:scale(1.1);
         opacity:0.12;
     }
 
@@ -402,7 +425,7 @@ body::before{
     }
 }
 
-/* TEXT FLICKER */
+/* FLICKER */
 
 @keyframes flicker{
 
