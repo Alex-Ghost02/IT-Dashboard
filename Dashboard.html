@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IT BAY Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000000;
+    color:white;
+    font-family:'Inter',sans-serif;
+    overflow:hidden;
+}
+
+/* ANIMATED BACKGROUND */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:
+        radial-gradient(circle,#00f5d4 1px,transparent 1px);
+    background-size:40px 40px;
+    opacity:0.06;
+    animation:moveGrid 25s linear infinite;
+    z-index:-1;
+}
+
+@keyframes moveGrid{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-200px,-200px);
+    }
+}
+
+/* IT BAY HEADER */
+
+.it-bay-header{
+    width:100%;
+    text-align:center;
+    font-size:120px;
+    font-weight:800;
+    color:#ffffff;
+    letter-spacing:12px;
+    padding-top:20px;
+    line-height:1;
+    text-shadow:0 0 25px rgba(255,255,255,0.15);
+}
+
+/* GREETING BAR */
+
+.top-banner{
+    width:100%;
+    background:#00f5d4;
+    color:#000;
+    text-align:center;
+    padding:20px 30px;
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-top:20px;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    padding:30px;
+}
+
+/* DATE */
+
+.date{
+    margin-top:10px;
+    font-size:42px;
+    font-weight:700;
+    color:#ffffff;
+    letter-spacing:2px;
+}
+
+/* CLOCK */
+
+.clock{
+    font-size:105px;
+    font-weight:700;
+    color:#00f5d4;
+    margin-top:5px;
+    text-shadow:0 0 20px rgba(0,245,212,0.25);
+}
+
+/* MEETING CARD */
+
+.card{
+    margin-top:30px;
+    background:#1a1a1a;
+    border-radius:24px;
+    padding:30px 35px;
+    font-size:32px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    box-shadow:0 0 20px rgba(255,255,255,0.03);
+}
+
+/* DOCTOR SECTION */
+
+.animation-section{
+    margin-top:35px;
+    height:48vh;
+    border-radius:30px;
+    background:#101010;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(255,255,255,0.03);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+/* FLOATING GLOW */
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#00f5d4;
+    filter:blur(180px);
+    opacity:0.08;
+    animation:pulseGlow 5s infinite;
+}
+
+/* COMPUTER DOCTOR */
+
+.doctor{
+    position:relative;
+    animation:float 4s ease-in-out infinite;
+    z-index:2;
+}
+
+/* MONITOR */
+
+.monitor{
+    width:280px;
+    height:190px;
+    background:#00f5d4;
+    border-radius:20px;
+    position:relative;
+    box-shadow:0 0 40px rgba(0,245,212,0.35);
+}
+
+/* FACE */
+
+.face{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+/* EYES */
+
+.eye{
+    width:24px;
+    height:24px;
+    background:#000;
+    border-radius:50%;
+    position:absolute;
+    top:65px;
+    animation:blink 5s infinite;
+}
+
+.eye.left{
+    left:80px;
+}
+
+.eye.right{
+    right:80px;
+}
+
+/* SMILE */
+
+.smile{
+    width:90px;
+    height:45px;
+    border-bottom:8px solid #000;
+    border-radius:0 0 90px 90px;
+    position:absolute;
+    left:95px;
+    top:100px;
+}
+
+/* STAND */
+
+.stand{
+    width:70px;
+    height:30px;
+    background:#00f5d4;
+    margin:auto;
+}
+
+.base{
+    width:160px;
+    height:18px;
+    background:#00f5d4;
+    border-radius:12px;
+    margin:auto;
+}
+
+/* PLUS */
+
+.plus{
+    position:absolute;
+    top:-25px;
+    right:-20px;
+    color:#00f5d4;
+    font-size:50px;
+    font-weight:800;
+    animation:pulse 2s infinite;
+}
+
+/* TEXT */
+
+.tech-text{
+    margin-top:35px;
+    font-size:58px;
+    font-weight:800;
+    letter-spacing:6px;
+    text-align:center;
+    color:white;
+    text-shadow:0 0 20px rgba(255,255,255,0.1);
+}
+
+.sub-text{
+    margin-top:16px;
+    font-size:28px;
+    color:#00f5d4;
+    letter-spacing:3px;
+    font-weight:700;
+    animation:flicker 3s infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.2);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes blink{
+    0%,45%,50%,100%{
+        height:24px;
+    }
+
+    48%{
+        height:4px;
+    }
+}
+
+@keyframes pulseGlow{
+    0%{
+        transform:scale(1);
+        opacity:0.06;
+    }
+
+    50%{
+        transform:scale(1.1);
+        opacity:0.12;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:0.06;
+    }
+}
+
+@keyframes flicker{
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.6;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- IT BAY -->
+
+<div class="it-bay-header">
+    IT BAY
+</div>
+
+<!-- GREETING -->
+
+<div class="top-banner" id="greetingBanner">
+    Good Morning • Please Raise IT Tickets via Jira
+</div>
+
+<div class="container">
+
+    <!-- DATE -->
+
+    <div class="date" id="date">
+        Monday, June 12
+    </div>
+
+    <!-- CLOCK -->
+
+    <div class="clock" id="clock">
+        12:00:00 PM
+    </div>
+
+    <!-- MEETING -->
+
+    <div class="card" id="meetingCard">
+        📢 Team Huddle - 12:30 PM
+    </div>
+
+    <!-- ANIMATION -->
+
+    <div class="animation-section">
+
+        <div class="glow"></div>
+
+        <div class="doctor">
+
+            <div class="monitor">
+
+                <div class="face">
+
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+
+                    <div class="smile"></div>
+
+                </div>
+
+            </div>
+
+            <div class="stand"></div>
+            <div class="base"></div>
+
+            <div class="plus">+</div>
+
+        </div>
+
+        <div class="tech-text">
+            TECH DOCTORS AT WORK
+        </div>
+
+        <div class="sub-text">
+            Keeping Systems Healthy • Secure • Online
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* CLOCK + DATE */
+
+function updateClock(){
+
+    const now = new Date();
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    const timeString =
+        `${hours}:${minutes}:${seconds} ${ampm}`;
+
+    document.getElementById("clock").innerText =
+        timeString;
+
+    const options = {
+        weekday:'long',
+        month:'long',
+        day:'numeric'
+    };
+
+    document.getElementById("date").innerText =
+        now.toLocaleDateString('en-US',options);
+}
+
+/* GREETING */
+
+function updateGreeting(){
+
+    const hour = new Date().getHours();
+
+    let greeting = "";
+
+    if(hour >= 5 && hour < 12){
+        greeting = "Good Morning";
+    }
+    else if(hour >= 12 && hour < 17){
+        greeting = "Good Afternoon";
+    }
+    else{
+        greeting = "Good Evening";
+    }
+
+    document.getElementById("greetingBanner").innerText =
+        greeting + " • Please Raise IT Tickets via Jira";
+}
+
+/* MEETING */
+
+function updateMeeting(){
+
+    const now = new Date();
+
+    const day = now.getDay();
+
+    let text = "";
+
+    if(day >= 1 && day <= 4){
+        text = "📢 Team Huddle - 12:30 PM";
+    }
+    else if(day === 5){
+        text = "📢 Team Meeting - 3:30 PM";
+    }
+    else{
+        text = "📢 Enjoy Your Weekend";
+    }
+
+    document.getElementById("meetingCard").innerText =
+        text;
+}
+
+/* INITIAL LOAD */
+
+updateClock();
+updateGreeting();
+updateMeeting();
+
+/* AUTO UPDATE */
+
+setInterval(updateClock,1000);
+
+</script>
+
+</body>
+
+</html>
