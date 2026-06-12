@@ -54,11 +54,11 @@ body::before{
 .it-bay-header{
     width:100%;
     text-align:center;
-    font-size:120px;
+    font-size:110px;
     font-weight:800;
     color:#ffffff;
-    letter-spacing:12px;
-    padding-top:20px;
+    letter-spacing:10px;
+    padding-top:18px;
     line-height:1;
     text-shadow:0 0 25px rgba(255,255,255,0.15);
 }
@@ -70,58 +70,95 @@ body::before{
     background:#00f5d4;
     color:#000;
     text-align:center;
-    padding:20px 30px;
-    font-size:34px;
+    padding:18px 30px;
+    font-size:30px;
     font-weight:800;
     letter-spacing:1px;
-    margin-top:20px;
+    margin-top:18px;
 }
 
 /* MAIN CONTAINER */
 
 .container{
-    padding:30px;
+    padding:25px;
 }
 
 /* DATE */
 
 .date{
-    margin-top:10px;
-    font-size:42px;
+    margin-top:5px;
+    font-size:34px;
     font-weight:700;
     color:#ffffff;
     letter-spacing:2px;
 }
 
-/* CLOCK */
+/* USER SATISFACTION */
 
-.clock{
-    font-size:105px;
-    font-weight:700;
-    color:#00f5d4;
-    margin-top:5px;
-    text-shadow:0 0 20px rgba(0,245,212,0.25);
-}
-
-/* MEETING CARD */
-
-.card{
-    margin-top:30px;
+.satisfaction-card{
+    margin-top:25px;
     background:#1a1a1a;
-    border-radius:24px;
-    padding:30px 35px;
-    font-size:32px;
+    border-radius:26px;
+    padding:28px 32px;
     display:flex;
+    justify-content:space-between;
     align-items:center;
-    gap:18px;
-    box-shadow:0 0 20px rgba(255,255,255,0.03);
+    box-shadow:0 0 25px rgba(255,255,255,0.03);
 }
 
-/* DOCTOR SECTION */
+/* LEFT TEXT */
+
+.satisfaction-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.satisfaction-title{
+    font-size:30px;
+    font-weight:800;
+    color:#00f5d4;
+    letter-spacing:2px;
+}
+
+.satisfaction-sub{
+    margin-top:8px;
+    font-size:20px;
+    color:#d0d0d0;
+    letter-spacing:1px;
+}
+
+/* RIGHT SCORE */
+
+.rating{
+    text-align:right;
+}
+
+.score{
+    font-size:72px;
+    font-weight:800;
+    color:#ffffff;
+    line-height:1;
+}
+
+.out-of{
+    font-size:22px;
+    color:#d0d0d0;
+    margin-top:2px;
+}
+
+.stars{
+    margin-top:10px;
+    font-size:34px;
+    color:#00f5d4;
+    letter-spacing:6px;
+    animation:glowStars 2s infinite;
+}
+
+/* ANIMATION SECTION */
 
 .animation-section{
-    margin-top:35px;
-    height:48vh;
+    margin-top:28px;
+    height:38vh;
     border-radius:30px;
     background:#101010;
     position:relative;
@@ -134,35 +171,36 @@ body::before{
     flex-direction:column;
 }
 
-/* FLOATING GLOW */
+/* GLOW */
 
 .glow{
     position:absolute;
-    width:500px;
-    height:500px;
+    width:420px;
+    height:420px;
     background:#00f5d4;
-    filter:blur(180px);
+    filter:blur(160px);
     opacity:0.08;
     animation:pulseGlow 5s infinite;
 }
 
-/* COMPUTER DOCTOR */
+/* DOCTOR */
 
 .doctor{
     position:relative;
     animation:float 4s ease-in-out infinite;
     z-index:2;
+    transform:scale(0.8);
 }
 
 /* MONITOR */
 
 .monitor{
-    width:280px;
-    height:190px;
+    width:240px;
+    height:160px;
     background:#00f5d4;
-    border-radius:20px;
+    border-radius:18px;
     position:relative;
-    box-shadow:0 0 40px rgba(0,245,212,0.35);
+    box-shadow:0 0 35px rgba(0,245,212,0.35);
 }
 
 /* FACE */
@@ -176,47 +214,47 @@ body::before{
 /* EYES */
 
 .eye{
-    width:24px;
-    height:24px;
+    width:20px;
+    height:20px;
     background:#000;
     border-radius:50%;
     position:absolute;
-    top:65px;
+    top:55px;
     animation:blink 5s infinite;
 }
 
 .eye.left{
-    left:80px;
+    left:68px;
 }
 
 .eye.right{
-    right:80px;
+    right:68px;
 }
 
 /* SMILE */
 
-.smile{
-    width:90px;
-    height:45px;
-    border-bottom:8px solid #000;
+.monitor-smile{
+    width:75px;
+    height:38px;
+    border-bottom:7px solid #000;
     border-radius:0 0 90px 90px;
     position:absolute;
-    left:95px;
-    top:100px;
+    left:82px;
+    top:88px;
 }
 
 /* STAND */
 
 .stand{
-    width:70px;
-    height:30px;
+    width:60px;
+    height:25px;
     background:#00f5d4;
     margin:auto;
 }
 
 .base{
-    width:160px;
-    height:18px;
+    width:140px;
+    height:16px;
     background:#00f5d4;
     border-radius:12px;
     margin:auto;
@@ -226,10 +264,10 @@ body::before{
 
 .plus{
     position:absolute;
-    top:-25px;
-    right:-20px;
+    top:-18px;
+    right:-15px;
     color:#00f5d4;
-    font-size:50px;
+    font-size:42px;
     font-weight:800;
     animation:pulse 2s infinite;
 }
@@ -237,35 +275,36 @@ body::before{
 /* TEXT */
 
 .tech-text{
-    margin-top:35px;
-    font-size:58px;
+    margin-top:18px;
+    font-size:42px;
     font-weight:800;
-    letter-spacing:6px;
+    letter-spacing:4px;
     text-align:center;
     color:white;
     text-shadow:0 0 20px rgba(255,255,255,0.1);
 }
 
 .sub-text{
-    margin-top:16px;
-    font-size:28px;
+    margin-top:10px;
+    font-size:22px;
     color:#00f5d4;
-    letter-spacing:3px;
+    letter-spacing:2px;
     font-weight:700;
     animation:flicker 3s infinite;
+    text-align:center;
 }
 
 /* ANIMATIONS */
 
 @keyframes float{
     0%{
-        transform:translateY(0px);
+        transform:translateY(0px) scale(0.8);
     }
     50%{
-        transform:translateY(-15px);
+        transform:translateY(-10px) scale(0.8);
     }
     100%{
-        transform:translateY(0px);
+        transform:translateY(0px) scale(0.8);
     }
 }
 
@@ -274,7 +313,7 @@ body::before{
         transform:scale(1);
     }
     50%{
-        transform:scale(1.2);
+        transform:scale(1.15);
     }
     100%{
         transform:scale(1);
@@ -283,7 +322,7 @@ body::before{
 
 @keyframes blink{
     0%,45%,50%,100%{
-        height:24px;
+        height:20px;
     }
 
     48%{
@@ -298,7 +337,7 @@ body::before{
     }
 
     50%{
-        transform:scale(1.1);
+        transform:scale(1.08);
         opacity:0.12;
     }
 
@@ -314,7 +353,17 @@ body::before{
     }
 
     50%{
-        opacity:0.6;
+        opacity:0.7;
+    }
+}
+
+@keyframes glowStars{
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.7;
     }
 }
 
@@ -344,19 +393,41 @@ body::before{
         Monday, June 12
     </div>
 
-    <!-- CLOCK -->
+    <!-- USER SATISFACTION -->
 
-    <div class="clock" id="clock">
-        12:00:00 PM
+    <div class="satisfaction-card">
+
+        <div class="satisfaction-text">
+
+            <div class="satisfaction-title">
+                USER SATISFACTION SCORE
+            </div>
+
+            <div class="satisfaction-sub">
+                Delivering Exceptional IT Support Experiences
+            </div>
+
+        </div>
+
+        <div class="rating">
+
+            <div class="score">
+                4.90
+            </div>
+
+            <div class="out-of">
+                out of 5
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+        </div>
+
     </div>
 
-    <!-- MEETING -->
-
-    <div class="card" id="meetingCard">
-        📢 Team Huddle - 12:30 PM
-    </div>
-
-    <!-- ANIMATION -->
+    <!-- TECH DOCTOR -->
 
     <div class="animation-section">
 
@@ -371,7 +442,7 @@ body::before{
                     <div class="eye left"></div>
                     <div class="eye right"></div>
 
-                    <div class="smile"></div>
+                    <div class="monitor-smile"></div>
 
                 </div>
 
@@ -398,29 +469,11 @@ body::before{
 
 <script>
 
-/* CLOCK + DATE */
+/* DATE */
 
-function updateClock(){
+function updateDate(){
 
     const now = new Date();
-
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
-
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    const timeString =
-        `${hours}:${minutes}:${seconds} ${ampm}`;
-
-    document.getElementById("clock").innerText =
-        timeString;
 
     const options = {
         weekday:'long',
@@ -454,39 +507,10 @@ function updateGreeting(){
         greeting + " • Please Raise IT Tickets via Jira";
 }
 
-/* MEETING */
-
-function updateMeeting(){
-
-    const now = new Date();
-
-    const day = now.getDay();
-
-    let text = "";
-
-    if(day >= 1 && day <= 4){
-        text = "📢 Team Huddle - 12:30 PM";
-    }
-    else if(day === 5){
-        text = "📢 Team Meeting - 3:30 PM";
-    }
-    else{
-        text = "📢 Enjoy Your Weekend";
-    }
-
-    document.getElementById("meetingCard").innerText =
-        text;
-}
-
 /* INITIAL LOAD */
 
-updateClock();
+updateDate();
 updateGreeting();
-updateMeeting();
-
-/* AUTO UPDATE */
-
-setInterval(updateClock,1000);
 
 </script>
 
